@@ -14,7 +14,7 @@
 <meta property="og:description" content="为什么使用文件重定向 测试程序时，反复键入数据十分乏味，并且费时费力 文件重定向为大多数操作系统所支持 文件重定向使标准输入输出与记录信息的文件关联起来  文件重定向cat filename_a.suffix &gt; filename_b.suffix 该命令使得file_a中内容复制到file_b中 若file_b原本有内容, 则其将被file_a中内容覆盖 执行的同时使用文件重定向.&#x2F;a.o">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-04-23T16:11:26.000Z">
-<meta property="article:modified_time" content="2023-04-26T17:30:32.217Z">
+<meta property="article:modified_time" content="2023-04-26T17:35:49.575Z">
 <meta property="article:author" content="RoyceCrazy">
 <meta property="article:tag" content="aaaaa">
 <meta name="twitter:card" content="summary">
@@ -159,7 +159,7 @@
 <h3 id="文件重定向"><a href="#文件重定向" class="headerlink" title="文件重定向"></a>文件重定向</h3><p><code>cat filename_a.suffix &gt; filename_b.suffix</code></p>
 <p>该命令使得file_a中内容复制到file_b中</p>
 <p>若file_b原本有内容, 则其将被file_a中内容覆盖</p>
-<h3 id="执行的同时使用文件重定向"><a href="#执行的同时使用文件重定向" class="headerlink" title="执行的同时使用文件重定向"></a>执行的同时使用文件重定向</h3><p><code>./a.out &lt; infile.txt &gt; outfile.txt</code></p>
+<h3 id="执行的同时使用文件重定向"><a href="#执行的同时使用文件重定向" class="headerlink" title="执行的同时使用文件重定向"></a>执行的同时使用文件重定向</h3><p><code>./a.out &lt; infile.txt &gt; outfile.txt</code> a.out (windows 则为 filename.exe), infile.txt, outfile.txt应该同一个目录下</p>
 <h5 id="可执行文件："><a href="#可执行文件：" class="headerlink" title="可执行文件："></a>可执行文件：</h5><p>在macOS中，编译器将c、cpp文件编译为可执行文件a.out；则需要用<code>./</code>命令来执行文件即<code>./a.out</code>；</p>
 <p>若是windows，则将<code>./a.out</code>替换为<code>filename.exe</code>以执行生成的.exe文件即可</p>
 <h5 id="文件重定向："><a href="#文件重定向：" class="headerlink" title="文件重定向："></a>文件重定向：</h5><p><code>&lt; infile.txt</code>即表示从infile.txt文件中读取输入</p>
