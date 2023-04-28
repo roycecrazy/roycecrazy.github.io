@@ -6,17 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="为什么使用文件重定向 测试程序时，反复键入数据十分乏味，并且费时费力 文件重定向为大多数操作系统所支持 文件重定向使标准输入输出与记录信息的文件关联起来  文件重定向cat filename_a.suffix &gt; filename_b.suffix 该命令使得file_a中内容复制到file_b中 若file_b原本有内容, 则其将被file_a中内容覆盖 执行的同时使用文件重定向.&#x2F;a.o">
+    <meta name="description" content="未经许可，严禁转载！为什么使用文件重定向 测试程序时，反复键入数据十分乏味，并且费时费力 文件重定向为大多数操作系统所支持 文件重定向使标准输入输出与记录信息的文件关联起来  文件重定向cat filename_a.suffix &gt; filename_b.suffix 该命令使得file_a中内容复制到file_b中 若file_b原本有内容, 则其将被file_a中内容覆盖 执行的同时使用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="利用文件重定向测试程序">
 <meta property="og:url" content="http://example.com/2023/04/24/%E5%88%A9%E7%94%A8%E6%96%87%E4%BB%B6%E9%87%8D%E5%AE%9A%E5%90%91%E6%B5%8B%E8%AF%95%E7%A8%8B%E5%BA%8F/index.html">
 <meta property="og:site_name" content="RoyceCrazy&#39;s Blog">
-<meta property="og:description" content="为什么使用文件重定向 测试程序时，反复键入数据十分乏味，并且费时费力 文件重定向为大多数操作系统所支持 文件重定向使标准输入输出与记录信息的文件关联起来  文件重定向cat filename_a.suffix &gt; filename_b.suffix 该命令使得file_a中内容复制到file_b中 若file_b原本有内容, 则其将被file_a中内容覆盖 执行的同时使用文件重定向.&#x2F;a.o">
+<meta property="og:description" content="未经许可，严禁转载！为什么使用文件重定向 测试程序时，反复键入数据十分乏味，并且费时费力 文件重定向为大多数操作系统所支持 文件重定向使标准输入输出与记录信息的文件关联起来  文件重定向cat filename_a.suffix &gt; filename_b.suffix 该命令使得file_a中内容复制到file_b中 若file_b原本有内容, 则其将被file_a中内容覆盖 执行的同时使用">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-04-23T16:11:26.000Z">
-<meta property="article:modified_time" content="2023-04-26T17:35:49.575Z">
+<meta property="article:modified_time" content="2023-04-28T16:57:02.068Z">
 <meta property="article:author" content="RoyceCrazy">
-<meta property="article:tag" content="aaaaa">
+<meta property="article:tag" content="little skills">
 <meta name="twitter:card" content="summary">
     
     
@@ -107,7 +107,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8%E6%96%87%E4%BB%B6%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-number">1.</span> <span class="toc-text">为什么使用文件重定向</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-number">2.</span> <span class="toc-text">文件重定向</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E7%9A%84%E5%90%8C%E6%97%B6%E4%BD%BF%E7%94%A8%E6%96%87%E4%BB%B6%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-number">3.</span> <span class="toc-text">执行的同时使用文件重定向</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%EF%BC%9A"><span class="toc-number">3.0.1.</span> <span class="toc-text">可执行文件：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E9%87%8D%E5%AE%9A%E5%90%91%EF%BC%9A"><span class="toc-number">3.0.2.</span> <span class="toc-text">文件重定向：</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%9C%AA%E7%BB%8F%E8%AE%B8%E5%8F%AF%EF%BC%8C%E4%B8%A5%E7%A6%81%E8%BD%AC%E8%BD%BD%EF%BC%81"><span class="toc-number">1.</span> <span class="toc-text">未经许可，严禁转载！</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8%E6%96%87%E4%BB%B6%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-number"></span> <span class="toc-text">为什么使用文件重定向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-number"></span> <span class="toc-text">文件重定向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E7%9A%84%E5%90%8C%E6%97%B6%E4%BD%BF%E7%94%A8%E6%96%87%E4%BB%B6%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-number"></span> <span class="toc-text">执行的同时使用文件重定向</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%EF%BC%9A"><span class="toc-number"></span> <span class="toc-text">可执行文件：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E9%87%8D%E5%AE%9A%E5%90%91%EF%BC%9A"><span class="toc-number"></span> <span class="toc-text">文件重定向：</span></a>
     </div>
   </span>
 </div>
@@ -142,7 +142,7 @@
       
     <div class="article-tag">
         <i class="fas fa-tag"></i>
-        <a class="p-category" href="/tags/aaaaa/" rel="tag">aaaaa</a>
+        <a class="p-category" href="/tags/little-skills/" rel="tag">little skills</a>
     </div>
 
 
@@ -151,18 +151,18 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h3 id="为什么使用文件重定向"><a href="#为什么使用文件重定向" class="headerlink" title="为什么使用文件重定向"></a>为什么使用文件重定向</h3><ol>
+    <h6 id="未经许可，严禁转载！"><a href="#未经许可，严禁转载！" class="headerlink" title="未经许可，严禁转载！"></a>未经许可，严禁转载！</h6><h2 id="为什么使用文件重定向"><a href="#为什么使用文件重定向" class="headerlink" title="为什么使用文件重定向"></a>为什么使用文件重定向</h2><ol>
 <li>测试程序时，反复键入数据十分乏味，并且费时费力</li>
 <li>文件重定向为大多数操作系统所支持</li>
 <li>文件重定向使标准输入输出与记录信息的文件关联起来</li>
 </ol>
-<h3 id="文件重定向"><a href="#文件重定向" class="headerlink" title="文件重定向"></a>文件重定向</h3><p><code>cat filename_a.suffix &gt; filename_b.suffix</code></p>
+<h2 id="文件重定向"><a href="#文件重定向" class="headerlink" title="文件重定向"></a>文件重定向</h2><p><code>cat filename_a.suffix &gt; filename_b.suffix</code></p>
 <p>该命令使得file_a中内容复制到file_b中</p>
 <p>若file_b原本有内容, 则其将被file_a中内容覆盖</p>
-<h3 id="执行的同时使用文件重定向"><a href="#执行的同时使用文件重定向" class="headerlink" title="执行的同时使用文件重定向"></a>执行的同时使用文件重定向</h3><p><code>./a.out &lt; infile.txt &gt; outfile.txt</code> a.out (windows 则为 filename.exe), infile.txt, outfile.txt应该同一个目录下</p>
-<h5 id="可执行文件："><a href="#可执行文件：" class="headerlink" title="可执行文件："></a>可执行文件：</h5><p>在macOS中，编译器将c、cpp文件编译为可执行文件a.out；则需要用<code>./</code>命令来执行文件即<code>./a.out</code>；</p>
+<h2 id="执行的同时使用文件重定向"><a href="#执行的同时使用文件重定向" class="headerlink" title="执行的同时使用文件重定向"></a>执行的同时使用文件重定向</h2><p><code>./a.out &lt; infile.txt &gt; outfile.txt</code> a.out (windows 则为 filename.exe), infile.txt, outfile.txt应该同一个目录下</p>
+<h3 id="可执行文件："><a href="#可执行文件：" class="headerlink" title="可执行文件："></a>可执行文件：</h3><p>在macOS中，编译器将c、cpp文件编译为可执行文件a.out；则需要用<code>./</code>命令来执行文件即<code>./a.out</code>；</p>
 <p>若是windows，则将<code>./a.out</code>替换为<code>filename.exe</code>以执行生成的.exe文件即可</p>
-<h5 id="文件重定向："><a href="#文件重定向：" class="headerlink" title="文件重定向："></a>文件重定向：</h5><p><code>&lt; infile.txt</code>即表示从infile.txt文件中读取输入</p>
+<h3 id="文件重定向："><a href="#文件重定向：" class="headerlink" title="文件重定向："></a>文件重定向：</h3><p><code>&lt; infile.txt</code>即表示从infile.txt文件中读取输入</p>
 <p><code>&gt; outfile.txt</code>则表示将输出信息复制到outfile.txt文件中</p>
 
   </div>
@@ -185,7 +185,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8%E6%96%87%E4%BB%B6%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-number">1.</span> <span class="toc-text">为什么使用文件重定向</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-number">2.</span> <span class="toc-text">文件重定向</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E7%9A%84%E5%90%8C%E6%97%B6%E4%BD%BF%E7%94%A8%E6%96%87%E4%BB%B6%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-number">3.</span> <span class="toc-text">执行的同时使用文件重定向</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%EF%BC%9A"><span class="toc-number">3.0.1.</span> <span class="toc-text">可执行文件：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E9%87%8D%E5%AE%9A%E5%90%91%EF%BC%9A"><span class="toc-number">3.0.2.</span> <span class="toc-text">文件重定向：</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%9C%AA%E7%BB%8F%E8%AE%B8%E5%8F%AF%EF%BC%8C%E4%B8%A5%E7%A6%81%E8%BD%AC%E8%BD%BD%EF%BC%81"><span class="toc-number">1.</span> <span class="toc-text">未经许可，严禁转载！</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8%E6%96%87%E4%BB%B6%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-number"></span> <span class="toc-text">为什么使用文件重定向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-number"></span> <span class="toc-text">文件重定向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E7%9A%84%E5%90%8C%E6%97%B6%E4%BD%BF%E7%94%A8%E6%96%87%E4%BB%B6%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-number"></span> <span class="toc-text">执行的同时使用文件重定向</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%EF%BC%9A"><span class="toc-number"></span> <span class="toc-text">可执行文件：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E9%87%8D%E5%AE%9A%E5%90%91%EF%BC%9A"><span class="toc-number"></span> <span class="toc-text">文件重定向：</span></a>
     </div>
 
     <div id="share-footer" style="display: none">
@@ -221,7 +221,7 @@
     Copyright &copy;
     
     
-    2019-2023
+    2023
     RoyceCrazy
   </div>
   <div class="footer-right">
